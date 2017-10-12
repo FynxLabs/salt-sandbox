@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  master:
+    image: fynxlabs/salt-master:develop
+    build: images/salt-master
+
+  minion:
+    image: fynxlabs/salt-minion:develop
+    build: images/salt-minion

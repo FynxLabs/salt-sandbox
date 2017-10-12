@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+# make sure that pip is installed
+apt-get install -y python-pip
+
+# install docker compose
+pip install docker-compose

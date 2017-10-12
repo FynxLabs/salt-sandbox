@@ -1,0 +1,2 @@
+master: $(hostname)
+master_finger: $(salt-key -F | grep master.pub | awk '{print $2}')

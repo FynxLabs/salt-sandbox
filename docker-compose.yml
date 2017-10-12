@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  master:
+    image: fynxlabs/salt-master
+    volumes:
+      - ./salt:/srv/salt
+      - ./master:/etc/salt/master.d
+      - salt-master-cache:/var/cache/salt
+      - salt-master-pki:/etc/salt/pki
+      - salt-master-logs:/var/log/salt
+
+  minion:
+    image: fynxlabs/salt-minion
+    links:
+      - master:salt
+    volumes:
+      - ./minion:/etc/salt/minion.d
+      - salt-minion-logs:/var/log/salt
+
+      # share minion with outer docker container
+      - /run/docker.sock:/run/docker.sock
+
+      # share host directory for further salt-minion work
+      - /data:/data
+
+volumes:
+  salt-master-pki:
+  salt-master-cache:
+  salt-master-logs:
+  salt-minion-logs:

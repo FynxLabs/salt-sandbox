@@ -1,0 +1,8 @@
+file_ignore_regex:
+  - '/\.svn($|/)'
+  - '/\.git($|/)'
+
+hash_type: sha512
+
+base:
+  - /srv/salt
