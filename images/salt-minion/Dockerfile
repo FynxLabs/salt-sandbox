@@ -1,4 +1,4 @@
-FROM greendwin/docker
+FROM ubuntu:16.04
 MAINTAINER FynxLabs <levi@fynx.me>
 
 RUN apt-get update &&\

@@ -6,7 +6,7 @@ A Docker image which allows you to run salt-master service.
 
 You can easily run the container like so:
 
-	docker run --rm -it greendwin/salt-master
+	docker run --rm -it fynxlabs/salt-master
 
 ## Volumes
 
@@ -30,7 +30,7 @@ configuration, states, pillars etc use:
         -v salt-master-cache:/var/salt/cache     \
         -v salt-master-pki:/etc/salt/pki         \
         --name salt-master                       \
-        greendwin/salt-master
+        fynxlabs/salt-master
 
 ## Ports
 
@@ -42,7 +42,7 @@ The following ports are exposed:
 
 Once installed run:
 
-    $ CONTAINER_ID=$(docker run -d greendwin/salt-master)
+    $ CONTAINER_ID=$(docker run -d fynxlabs/salt-master)
     $ docker exec -it $CONTAINER_ID bash
     $ root@CONTAINER_ID:~# salt-key -L
     $ root@CONTAINER_ID:~# salt '*' test.ping
